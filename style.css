@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+body {
+  background: url("img/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Orbitron', sans-serif;
+  color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.container {
+  padding: 80px 20px;
+  max-width: 960px;
+  margin: auto;
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  animation: fadeInUp 1s ease-out;
+}
+
+h1.glow {
+  font-size: 3.5em;
+  margin-bottom: 20px;
+  color: #00fff7;
+  text-shadow: 0 0 8px #00fff7, 0 0 20px #00fff7, 0 0 30px #00fff7;
+}
+
+.intro {
+  font-size: 1.3em;
+  margin-top: 0;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+nav {
+  margin: 30px 0;
+  position: sticky;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px 0;
+  z-index: 1000;
+  box-shadow: 0 2px 12px rgba(0, 255, 255, 0.2);
+}
+
+nav a {
+  margin: 0 15px;
+  padding: 12px 24px;
+  background: transparent;
+  border: 2px solid #00fff7;
+  color: #00fff7;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+nav a:hover {
+  background-color: #00fff7;
+  color: black;
+  box-shadow: 0 0 12px #00fff7;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.works-section {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 16px;
+  padding: 40px 20px;
+  margin: 60px auto;
+  max-width: 1000px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.works-section h2 {
+  color: #00fff7;
+  font-size: 2em;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px #00fff7;
+}
+
+/* 圖片排列區 */
+.image-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* 單張圖片卡片 */
+.image-card {
+  text-align: center;
+}
+
+/* 圖片樣式 */
+.about-pic {
+  width: 200px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+
+.gallery-pic:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+}
+
+/* 圖片下方文字 */
+.image-caption {
+  margin-top: 12px;
+  font-size: 1.1em;
+  color: #ffffff;
+}
+
+.back-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #81D8D0;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(129, 216, 208, 0.5);
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+
+.back-button:hover {
+  background-color: #66c3ba;
+  box-shadow: 0 0 20px rgba(129, 216, 208, 0.9);
+  transform: scale(1.05);
+}

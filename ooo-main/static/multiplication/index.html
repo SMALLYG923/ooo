@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>homework</title>
+    <style>
+        :root {
+            --primary-bg-color: rgb(218, 119, 180);
+            --default-font-family: Arial, Helvetica, sans-serif;
+            --border-color: black;
+            --container-padding: 30px;
+            --cell-padding: 5px;
+            --h1-font-size: 30px;
+            --label-font-size: 20px;
+            --input-spacing: 10px; 
+        }
+
+        body {
+            font-family: var(--default-font-family);
+        }
+
+        #myid {
+            width: 50%;
+            background-color: var(--primary-bg-color);
+            padding: var(--container-padding); 
+            margin-left: 0; 
+            text-align: center; 
+            box-sizing: border-box;
+        }
+        h1 {
+            font-size: var(--h1-font-size);
+            font-weight: bold;
+            text-align: left; 
+            margin-top: 0; 
+            margin-bottom: 0.67em; 
+        }
+
+        label {
+            font-size: var(--label-font-size);
+            display: inline-block; 
+            margin-bottom: var(--input-spacing); 
+        }
+
+        table {
+            width: 100%; 
+            border: 1px solid var(--border-color); 
+            border-collapse: collapse; 
+            margin: 20px auto 0; 
+            table-layout: fixed; 
+            text-align: center; 
+        }
+
+        td {
+            border: 1px solid var(--border-color); 
+            padding: var(--cell-padding); 
+        }
+        #numberInput, button {
+            padding: 8px;
+            font-size: 1em; 
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 5px; 
+        }
+
+        button {
+            background-color: #f0f0f0; 
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e0e0e0;
+        }
+
+    </style>
+    <script>
+        function myFunction() {
+            var number = document.getElementById("numberInput");
+            var myid = document.getElementById("myid");
+            var n = parseInt(number.value);
+            var str = "";
+
+            if (isNaN(n) || n <= 0) {
+                myid.innerHTML = "<h1></h1><label for='numberInput'></label>請輸入正整數！";
+                return;
+            }
+
+
+            str += "<table>";
+            for (var i = 1; i <= n; i++) {
+                str += "<tr>";
+                for (var j = 1; j <= n; j++) {
+                    str += "<td>" + i + " &times; " + j + " = " + (i * j) + "</td>";
+                }
+                str += "</tr>";
+            }
+            str += "</table>";
+
+            myid.innerHTML = document.querySelector('h1').outerHTML + document.querySelector('label').outerHTML + document.getElementById('numberInput').outerHTML + document.querySelector('button').outerHTML + str;
+        }
+    </script>
+</head>
+<body>
+    <div id="myid">
+        <h1>九九乘法表</h1>
+        <label for="numberInput">輸入一個正整數:</label>
+        <input type="number" id="numberInput" name="numberInput">
+        <button onclick="myFunction()">產生乘法表</button>
+        </div>
+</body>
+</html>
